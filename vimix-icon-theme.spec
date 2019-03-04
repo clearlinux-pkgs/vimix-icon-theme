@@ -4,7 +4,7 @@
 #
 Name     : vimix-icon-theme
 Version  : 2019.01.27
-Release  : 2
+Release  : 3
 URL      : https://github.com/vinceliuice/vimix-icon-theme/archive/2019-01-27.tar.gz
 Source0  : https://github.com/vinceliuice/vimix-icon-theme/archive/2019-01-27.tar.gz
 Summary  : No detailed summary available
@@ -45,12 +45,13 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1548621995
+export SOURCE_DATE_EPOCH=1551732376
+export LDFLAGS="${LDFLAGS} -fno-lto"
 make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1548621995
+export SOURCE_DATE_EPOCH=1551732376
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/vimix-icon-theme
 cp LICENSE %{buildroot}/usr/share/package-licenses/vimix-icon-theme/LICENSE
@@ -61,7 +62,8 @@ cp LICENSE %{buildroot}/usr/share/package-licenses/vimix-icon-theme/LICENSE
 
 %files data
 %defattr(-,root,root,-)
-/usr/share/icons/Paper-Vimix/icon-theme.cache
+%exclude /usr/share/icons/Paper-Vimix/icon-theme.cache
+%exclude /usr/share/icons/Vimix/icon-theme.cache
 /usr/share/icons/Paper-Vimix/index.theme
 /usr/share/icons/Paper-Vimix/other/actions/Finished.svg
 /usr/share/icons/Paper-Vimix/other/actions/Info-amarok.svg
@@ -4940,7 +4942,6 @@ cp LICENSE %{buildroot}/usr/share/package-licenses/vimix-icon-theme/LICENSE
 /usr/share/icons/Paper-Vimix/symbolic/status/weather-showers-scattered-symbolic.svg
 /usr/share/icons/Paper-Vimix/symbolic/status/weather-showers-symbolic.svg
 /usr/share/icons/Paper-Vimix/symbolic/status/weather-snow-symbolic.svg
-/usr/share/icons/Vimix/icon-theme.cache
 /usr/share/icons/Vimix/index.theme
 /usr/share/icons/Vimix/mimetypes/scalable/7zip.svg
 /usr/share/icons/Vimix/mimetypes/scalable/ai.svg
