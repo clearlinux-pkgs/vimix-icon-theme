@@ -4,7 +4,7 @@
 #
 Name     : vimix-icon-theme
 Version  : 2019.01.27
-Release  : 3
+Release  : 4
 URL      : https://github.com/vinceliuice/vimix-icon-theme/archive/2019-01-27.tar.gz
 Source0  : https://github.com/vinceliuice/vimix-icon-theme/archive/2019-01-27.tar.gz
 Summary  : No detailed summary available
