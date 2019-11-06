@@ -1,30 +1,28 @@
-From c4cc0fe30e3d04db162c318483dbdc23583669a9 Mon Sep 17 00:00:00 2001
+From d65069b5f2e60ab511e7c9795bfe5d304419dea2 Mon Sep 17 00:00:00 2001
 From: George T Kramer <george.t.kramer@intel.com>
 Date: Sun, 27 Jan 2019 01:26:20 -0800
 Subject: [PATCH] Add Makefile
 
 ---
- Makefile | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ Makefile | 9 +++++++++
+ 1 file changed, 9 insertions(+)
  create mode 100644 Makefile
 
 diff --git a/Makefile b/Makefile
 new file mode 100644
-index 0000000..bcf99e0
+index 0000000..8f4e981
 --- /dev/null
 +++ b/Makefile
-@@ -0,0 +1,11 @@
+@@ -0,0 +1,9 @@
 +.PHONY: build
 +build:
-+	rm -f Installer.sh
++	@echo "nothing to build"
 +
 +.PHONY: install
 +install:
 +	mkdir -p $(DESTDIR)/usr/share/icons
-+	cp -a Vimix $(DESTDIR)/usr/share/icons
-+	cp -a Paper-Vimix $(DESTDIR)/usr/share/icons
-+	gtk-update-icon-cache -f $(DESTDIR)/usr/share/icons/Vimix
-+	gtk-update-icon-cache -f $(DESTDIR)/usr/share/icons/Paper-Vimix
++	cp -a Vimix-Paper $(DESTDIR)/usr/share/icons
++	cp -a Vimix-Old   $(DESTDIR)/usr/share/icons
 -- 
-2.20.1
+2.23.0
 
