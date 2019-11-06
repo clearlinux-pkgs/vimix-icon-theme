@@ -4,7 +4,7 @@
 #
 Name     : vimix-icon-theme
 Version  : 2019.05.04
-Release  : 5
+Release  : 6
 URL      : https://github.com/vinceliuice/vimix-icon-theme/archive/2019-05-04.tar.gz
 Source0  : https://github.com/vinceliuice/vimix-icon-theme/archive/2019-05-04.tar.gz
 Summary  : No detailed summary available
@@ -12,6 +12,7 @@ Group    : Development/Tools
 License  : CC-BY-SA-4.0
 Requires: vimix-icon-theme-data = %{version}-%{release}
 Patch1: 0001-Add-Makefile.patch
+Patch2: 0001-fix-broken-svg-for-librsvg-2.47.0.patch
 
 %description
 ## Vimix Icon Theme
@@ -30,13 +31,14 @@ data components for the vimix-icon-theme package.
 %setup -q -n vimix-icon-theme-2019-05-04
 cd %{_builddir}/vimix-icon-theme-2019-05-04
 %patch1 -p1
+%patch2 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1573059729
+export SOURCE_DATE_EPOCH=1573079471
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -46,7 +48,7 @@ make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1573059729
+export SOURCE_DATE_EPOCH=1573079471
 rm -rf %{buildroot}
 %make_install
 ## Remove excluded files
